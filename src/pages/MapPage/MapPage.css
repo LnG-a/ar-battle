@@ -1,0 +1,12 @@
+.popup-delete-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-popup {
+  text-align: center;
+}
+.delete-popup h2 {
+  margin-bottom: 30px;
+}

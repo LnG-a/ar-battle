@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../Button/Button";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase";
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
+  const navigate = useNavigate();
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -16,23 +14,10 @@ function Navbar() {
     signOut(auth)
       .then(() => {
         console.log("sign out successful");
+        navigate("/login");
       })
       .catch((error) => console.log(error));
   };
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener("resize", showButton);
 
   return (
     <>
@@ -57,11 +42,9 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && (
-            <Button onClick={userSignOut} buttonStyle="btn--primary">
-              Đăng xuất
-            </Button>
-          )}
+          <button onClick={userSignOut} type="button" className="logout-button">
+            Đăng xuất
+          </button>
         </div>
       </nav>
     </>

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./pages/SignupPage/SignUpPage";
 import RequireAuth from "./routing/RequireAuth";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import MapPage from "./pages/MapPage/MapPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route element={<RequireAuth />}>
           <Route path="/home" element={<MapUploader />} />
+          <Route path="/map" element={<MapPage />} />
         </Route>
         <Route path="/*" element={<NotFoundPage />} />
       </Routes>

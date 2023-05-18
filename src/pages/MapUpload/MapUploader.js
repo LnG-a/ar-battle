@@ -18,6 +18,7 @@ function MapUploader() {
   const [imageUrls, setImageUrls] = useState([]);
 
   const imagesListRef = ref(storage, "map/");
+
   const uploadFile = () => {
     if (imageUpload == null) return;
     const imageRef = ref(storage, `map/${imageUpload.name + v4()}`);
@@ -41,7 +42,7 @@ function MapUploader() {
   return (
     <div className="container">
       <Navbar />
-      <input
+      {/* <input
         type="file"
         onChange={(event) => {
           setImageUpload(event.target.files[0]);
@@ -55,7 +56,7 @@ function MapUploader() {
         //     <source src={url} />
         //   </video>
         // );
-      })}
+      })} */}
     </div>
   );
 }
