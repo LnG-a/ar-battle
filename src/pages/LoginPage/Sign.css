@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #c8827c;
 }
 
 .sign-form {
@@ -50,7 +49,7 @@
 .sign-button:hover {
   cursor: pointer;
   transition: all 0.3s;
-  background-color: #c8827c;
+  background-color: #7b757d;
   color: white;
 }
 
